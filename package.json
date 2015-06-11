@@ -7,15 +7,15 @@
   "version": "0.0.1",
   "repository": {
     "type": "git",
-    "url": "e:\\temp\\grunt-tsx.git"
+    "url": "https://github.com/xegax/grunt-tsx"
   },
   "bugs": {
-    "url": "https://github.com/grunt-ts/grunt-ts/issues"
+    "url": "https://github.com/xegax/grunt-tsx/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/grunt-ts/grunt-ts/blob/master/LICENSE"
+      "url": "https://github.com/xegax/grunt-tsx/blob/master/LICENSE"
     }
   ],
   "main": "grunt-tsx.js",
@@ -62,5 +62,5 @@
   "dist": {
   },
   "directories": {},
-  "readme": "ERROR: No README data found!"
+  "readme": "grunt-tsx is a npm package that transform XML like syntax wrapped by JSX(``) in TypeScript files to React.createElement calls."
 }
