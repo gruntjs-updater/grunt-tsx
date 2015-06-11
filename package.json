@@ -3,7 +3,7 @@
     "name": "xega"
   },
   "name": "grunt-tsx",
-  "description": "Transform TSX(`<div/>`) calls to React.createElement",
+  "description": "Transform JSX(`<div/>`) wraps in TypeScript to React.createElement calls",
   "version": "0.0.1",
   "repository": {
     "type": "git",
@@ -18,7 +18,7 @@
       "url": "https://github.com/grunt-ts/grunt-ts/blob/master/LICENSE"
     }
   ],
-  "main": "grunt.js",
+  "main": "grunt-tsx.js",
   "maintainers": [
     {
       "name": "xega",
@@ -53,8 +53,7 @@
       "email": "xxegax@gmail.com"
     }
   ],
-  "_id": "grunt-jsx@4.0.1",
-  "_from": "grunt-ts@^4.0.1",
+  "_id": "grunt-tsx@0.0.1",
   "_npmVersion": "0.0.1",
   "_npmUser": {
     "name": "xega",
