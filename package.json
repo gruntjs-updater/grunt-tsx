@@ -1,0 +1,68 @@
+{
+  "author": {
+    "name": "xega"
+  },
+  "name": "grunt-tsx",
+  "description": "Transform TSX(`<div/>`) calls to React.createElement",
+  "version": "0.0.1",
+  "homepage": "e:\\temp\\grunt-tsx",
+  "repository": {
+    "type": "git",
+    "url": "e:\\temp\\grunt-tsx.git"
+  },
+  "bugs": {
+    "url": "https://github.com/grunt-ts/grunt-ts/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/grunt-ts/grunt-ts/blob/master/LICENSE"
+    }
+  ],
+  "main": "grunt.js",
+  "maintainers": [
+    {
+      "name": "xega",
+      "email": "xxegax@gmail.com"
+    }
+  ],
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "dependencies": {
+    "react-tools": "0.13.3",
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.0"
+  },
+  "devDependencies": {
+  },
+  "optionalDependencies": {},
+  "keywords": [
+    "gruntplugin",
+    "typescript",
+    "compiler",
+    "visualstudio",
+    "build"
+  ],
+  "contributors": [
+    {
+      "name": "Kozlov Sergey",
+      "email": "xxegax@gmail.com",
+    }
+  ],
+  "_id": "grunt-jsx@4.0.1",
+  "_from": "grunt-ts@^4.0.1",
+  "_npmVersion": "0.0.1",
+  "_npmUser": {
+    "name": "xega",
+    "email": "xxegax@gmail.com"
+  },
+  "dist": {
+  },
+  "directories": {},
+  "readme": "ERROR: No README data found!"
+}
