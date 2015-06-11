@@ -20,7 +20,7 @@ module.exports = function(grunt) {
     var parser = function(src) {
         var ctx = {
             start: 0,
-            next: function() {
+            next: function() { //next no white space character
                 ctx.start++;
                 for(var n=ctx.start; n<src.length; n++) {
                     var chr = src[n];
@@ -39,24 +39,28 @@ module.exports = function(grunt) {
                 ctx.next();
                 ctx.match(s);
             },
-            parseJSX: function(wrap) {
-                ctx.next();
-                var end = -1;
-                for(var n=ctx.start;n<src.length;n++) {
-                    if(src[n]==wrap) {
-                        end = n;
+            expectWrappedValue: function(start, end, escape) {
+                ctx.expect(start);
+                var range = [ctx.start+start.length,];
+                for(var n=range[0];n<src.length;n++) {
+                    if(src.substr(n, end.length)==end) {
+                        
+                        if(escape && end.length==1 && src[n-1] == '\\')
+                            continue;
+                            
+                        range[1] = n;
                         break;
                     }
                 }
-                
-                if(end!=-1) {
-                    var res = src.substr(ctx.start, end-ctx.start);
-                    ctx.start = end;
-                    ctx.expect(')');
+                if(range[1]!=undefined) {
+                    ctx.start = range[1]+end.length-1;
+                    var res = src.substr(range[0], range[1]-range[0]);
+                    if(escape && end.length==1)
+                        res = res.replace(new RegExp('\\\\'+end,'g'), end);
                     return res;
                 }
                 
-                throw 'parseJSX failed';
+                throw 'fail to parse wrapped value';
             },
             findKeyword: function(kWord) {
                 var i = src.indexOf(kWord, ctx.start);
@@ -81,9 +85,10 @@ module.exports = function(grunt) {
                 out+=(data.substr(start, ctx.start-start-keyword.length+1));
                 
                 ctx.expect('(');
-                ctx.expect('`');
+                var xml = ctx.expectWrappedValue('`', '`', true);
+                out+=('('+JSX.transform(xml)+')');
+                ctx.expect(')');
                 
-                out+=('('+JSX.transform(ctx.parseJSX('`'))+')');
                 start = ctx.start+1;
             }
             catch(e) {
