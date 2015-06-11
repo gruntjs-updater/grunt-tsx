@@ -1,8 +1,8 @@
 module.exports = function(grunt) {
     var fs = require('fs');
-    var TSX = require('react-tools');
+    var JSX = require('react-tools');
     
-    grunt.registerMultiTask('grunt-tsx', 'transform JSX(`<div></div>`)', function() {
+    grunt.registerMultiTask('grunt-tsx', 'transform JSX(`<div></div>`) to React.createElement like calls', function() {
         var data = this.data;
         var cwd = data.cwd || process.cwd();
         var ext = data.ext || 'ts';
@@ -75,7 +75,7 @@ module.exports = function(grunt) {
         
         var out = '';
         var start = 0;
-        var keyword = 'TSX';
+        var keyword = 'JSX';
         while(ctx.findKeyword(keyword)) {
             try {
                 out+=(data.substr(start, ctx.start-start-keyword.length+1));
@@ -83,7 +83,7 @@ module.exports = function(grunt) {
                 ctx.expect('(');
                 ctx.expect('`');
                 
-                out+=('('+TSX.transform(ctx.parseJSX('`')).code+')');
+                out+=('('+JSX.transform(ctx.parseJSX('`'))+')');
                 start = ctx.start+1;
             }
             catch(e) {

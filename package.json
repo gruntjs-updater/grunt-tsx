@@ -5,7 +5,6 @@
   "name": "grunt-tsx",
   "description": "Transform TSX(`<div/>`) calls to React.createElement",
   "version": "0.0.1",
-  "homepage": "e:\\temp\\grunt-tsx",
   "repository": {
     "type": "git",
     "url": "e:\\temp\\grunt-tsx.git"
@@ -33,7 +32,7 @@
     "test": "grunt test"
   },
   "dependencies": {
-    "react-tools": "0.13.3",
+    "react-tools": "0.13.3"
   },
   "peerDependencies": {
     "grunt": "~0.4.0"
@@ -51,7 +50,7 @@
   "contributors": [
     {
       "name": "Kozlov Sergey",
-      "email": "xxegax@gmail.com",
+      "email": "xxegax@gmail.com"
     }
   ],
   "_id": "grunt-jsx@4.0.1",
