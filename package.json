@@ -4,7 +4,7 @@
   },
   "name": "grunt-tsx",
   "description": "Transform JSX(`<div/>`) wraps in TypeScript to React.createElement calls",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/xegax/grunt-tsx"
