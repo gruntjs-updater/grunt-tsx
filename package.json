@@ -35,10 +35,9 @@
     "react-tools": "0.13.3"
   },
   "peerDependencies": {
-    "grunt": "~0.4.0"
+    "grunt": ">=0.4.0"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "optionalDependencies": {},
   "keywords": [
     "gruntplugin",
@@ -59,8 +58,7 @@
     "name": "xega",
     "email": "xxegax@gmail.com"
   },
-  "dist": {
-  },
+  "dist": {},
   "directories": {},
   "readme": "grunt-tsx is a npm package that transform XML like syntax wrapped by JSX(``) in TypeScript files to React.createElement calls."
 }
